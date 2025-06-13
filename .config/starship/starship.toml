@@ -144,9 +144,9 @@ style       = "bg:#1d2230"
 format      = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
 
 [battery]
-full_symbol        = "🔋"
-charging_symbol    = "🔌"
-discharging_symbol = "⚡"
+full_symbol        = ""
+charging_symbol    = ""
+discharging_symbol = "󱐋"
 format             = '[ $symbol $percentage](fg:#a0a9cb bg:#1d2230)'
 
 # battery warning
