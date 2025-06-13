@@ -42,7 +42,7 @@ alias update-all='sudo pacman -Syu --noconfirm archlinux-keyring;yay -Syu --noco
 alias cat='bat --theme=ansi'
 alias htop='btop'
 
-# ip addresses
+# # IP Addresses
 alias publicip='echo "IPv4: $(curl -4 -s icanhazip.com)"; echo "IPv6: $(curl -6 -s icanhazip.com)"'
 alias localip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 
@@ -54,16 +54,45 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ..g=' cd "$(git rev-parse --show-toplevel)"' # goto git root
 
+# # Git
+alias g='git'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gco='git checkout'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gl='git log --oneline --graph --decorate'
+alias glo='git log --oneline'
+alias gm='git merge'
+alias gp='git push'
+alias gpl='git pull'
+alias gr='git remote'
+alias grv='git remote -v'
+alias gs='git status'
+alias gst='git status'
+alias gcl='git clone'
+alias gmv='git mv'
+alias grm='git rm'
+alias gsta='git stash'
+alias gstp='git stash pop'
+alias gsts='git stash show'
+alias gsw='git switch'
+alias gsu='git submodule update --init --recursive'
+alias gbl='git blame'
+
 # # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
-# alias mkdir='mkdir -p'
+alias mkdir='mkdir -p'
 
 #  Plugins 
 # manually add your oh-my-zsh plugins here
 plugins=(
     "sudo"
-    "git"                     # (default)
     "zsh-autosuggestions"     # (default)
     "zsh-syntax-highlighting" # (default)
     "zsh-completions"         # (default)
 )
+
+# # Dotfiles
 alias config='/usr/bin/git --git-dir=/home/justin/.dotfiles/ --work-tree=/home/justin'
