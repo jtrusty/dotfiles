@@ -16,6 +16,9 @@ if [[ $- == *i* ]]; then
 fi
 # fastfetch.sh
 
+# # FZF
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
+
 #  Aliases 
 # Override aliases here or in '~/.zshrc' (already set in .zshenv)
 
@@ -28,6 +31,8 @@ alias ls='eza -1 --icons=auto'                                         # short l
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
 alias ld='eza -lhD --icons=auto'                                       # long list dirs
 alias lt='eza --icons=auto --tree'                                     # list folder as tree
+
+alias fzf='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"' # preview files in fzf
 
 # alias un='$aurhelper -Rns'                                             # uninstall package
 # alias up='$aurhelper -Syu'                                             # update system/package/aur
@@ -57,34 +62,6 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ..g=' cd "$(git rev-parse --show-toplevel)"' # goto git root
 
-# # Git
-alias g='git'
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit'
-alias gcm='git commit -m'
-alias gco='git checkout'
-alias gd='git diff'
-alias gds='git diff --staged'
-alias gl='git log --oneline --graph --decorate'
-alias glo='git log --oneline'
-alias gm='git merge'
-alias gp='git push'
-alias gpl='git pull'
-alias gr='git remote'
-alias grv='git remote -v'
-alias gs='git status'
-alias gst='git status'
-alias gcl='git clone'
-alias gmv='git mv'
-alias grm='git rm'
-alias gsta='git stash'
-alias gstp='git stash pop'
-alias gsts='git stash show'
-alias gsw='git switch'
-alias gsu='git submodule update --init --recursive'
-alias gbl='git blame'
-
 # # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 alias mkdir='mkdir -p'
 
@@ -95,6 +72,7 @@ plugins=(
     "zsh-autosuggestions"     # (default)
     "zsh-syntax-highlighting" # (default)
     "zsh-completions"         # (default)
+    "git"                     # (default)
 )
 
 # # Dotfiles
