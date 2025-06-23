@@ -18,6 +18,10 @@ fi
 
 # # FZF
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
+alias fzf='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"' # preview files in fzf
+
+# # Atuin
+echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
 
 #  Aliases 
 # Override aliases here or in '~/.zshrc' (already set in .zshenv)
@@ -31,8 +35,6 @@ alias ls='eza -1 --icons=auto'                                         # short l
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
 alias ld='eza -lhD --icons=auto'                                       # long list dirs
 alias lt='eza --icons=auto --tree'                                     # list folder as tree
-
-alias fzf='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"' # preview files in fzf
 
 # alias un='$aurhelper -Rns'                                             # uninstall package
 # alias up='$aurhelper -Syu'                                             # update system/package/aur
