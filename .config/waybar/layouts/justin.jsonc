@@ -1,0 +1,130 @@
+{
+  "layer": "top",
+  "output": ["*"],
+  "position": "top",
+  "mode": "dock",
+  "height": 38,
+  "spacing": 0,
+  "exclusive": true,
+  "passthrough": false,
+  "reload_style_on_change": true,
+  "name": "default",
+  "include": [
+    "$XDG_CONFIG_HOME/waybar/modules/*json*",
+    "$XDG_CONFIG_HOME/waybar/includes/includes.json"
+  ],
+
+  "clock#date": {
+    "format": "{:%a %b %d}",
+    "rotate": -1,
+    // "format-alt": "{:%R \udb79\udced %d\u00b7%m\u00b7%y}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 2,
+      "on-scroll": 0,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead2'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc65'><b>{}</b></span>",
+        "today": "<span color='#ff6698'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  "group/pill#system": {
+    "orientation": "inherit",
+    "modules": [
+      "cpu", 
+      "memory", 
+      "custom/gpuinfo",
+      "custom/sensorsinfo",
+
+      "bluetooth",
+      "custom/display",
+      "network",
+      "backlight", 
+      
+      "battery",
+      "custom/power"
+    ]
+  },
+
+  "group/pill#time": {
+    "orientation": "inherit",
+    "modules": [
+      "idle_inhibitor",
+      "custom/hyprsunset",
+      "clock#date",
+      "clock",
+      "custom/updates",
+      "custom/github_hyde"
+    ]
+  },
+  
+  "group/pill#weather": {
+    "orientation": "inherit",
+    "modules": [
+      "custom/weather"
+    ]
+  },
+
+  "group/pill#misc": {
+    "orientation": "inherit",
+    "modules": [
+      "privacy",
+      "tray"
+    ]
+  },
+
+  "group/pill#workspaces": {
+    "orientation": "inherit",
+    "modules": [
+      "hyprland/workspaces"
+    ]
+  },
+  
+  "group/pill#audio": {
+    "orientation": "inherit",
+    "modules": [
+      "privacy",
+      "pulseaudio", 
+      "pulseaudio#microphone" 
+      // "custom/cava"
+    ]
+  },
+  
+  "group/pill#hyde": {
+    "orientation": "inherit",
+    "modules": [
+      "custom/hyde-menu", 
+      "custom/keybindhint",
+      "custom/cliphist",
+      "custom/dunst"
+    ]
+  },
+
+  "modules-left": [
+    "group/pill#system",
+    "group/pill#audio"
+  ],
+
+  "modules-center": [
+    "group/pill#workspaces"
+  ],
+  
+  "modules-right": [
+    "group/pill#hyde",
+    "group/pill#weather",
+    "group/pill#misc",
+    "group/pill#time"
+  ]
+
+}
