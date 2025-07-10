@@ -18,10 +18,6 @@ fi
 
 # # FZF
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
-alias fzf='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"' # preview files in fzf
-
-# # Atuin
-echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
 
 #  Aliases 
 # Override aliases here or in '~/.zshrc' (already set in .zshenv)
@@ -44,6 +40,7 @@ alias lt='eza --icons=auto --tree'                                     # list fo
 # alias po='$aurhelper -Qtdq | $aurhelper -Rns -'                        # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 # alias vc='code'                                                        # gui code editor
 
+alias fzf='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"' # preview files in fzf
 alias fastfetch='fastfetch --logo-type kitty'
 alias update-all='sudo pacman -Syu --noconfirm archlinux-keyring;yay -Syu --noconfirm; flatpak update -y; mise self-update;mise upgrade'
 alias cat='bat --theme=ansi'
@@ -148,3 +145,12 @@ git_page_maybe() {
         less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines
     fi
 }
+
+# # Atuin
+eval "$(atuin init zsh)"
+
+# # Mise
+eval "$(/usr/bin/mise activate zsh)"
+
+# # Zoxide
+eval "$(zoxide init --cmd cd zsh)"

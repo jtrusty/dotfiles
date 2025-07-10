@@ -76,10 +76,16 @@
     ]
   },
 
-  "group/pill#misc": {
+  "group/pill#privacy": {
     "orientation": "inherit",
     "modules": [
-      "privacy",
+      "privacy"
+    ]
+  },
+
+  "group/pill#tray": {
+    "orientation": "inherit",
+    "modules": [
       "tray"
     ]
   },
@@ -96,8 +102,8 @@
     "modules": [
       "privacy",
       "pulseaudio", 
-      "pulseaudio#microphone" 
-      // "custom/cava"
+      "pulseaudio#microphone", 
+      "custom/cava"
     ]
   },
   
@@ -113,7 +119,8 @@
 
   "modules-left": [
     "group/pill#system",
-    "group/pill#audio"
+    "group/pill#audio",
+    "group/pill#privacy"
   ],
 
   "modules-center": [
@@ -123,7 +130,7 @@
   "modules-right": [
     "group/pill#hyde",
     "group/pill#weather",
-    "group/pill#misc",
+    "group/pill#tray",
     "group/pill#time"
   ]
 
